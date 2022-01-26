@@ -1,0 +1,52 @@
+<header class="item slogan">
+  <img src="assets/icon2.png" alt="" />
+  <h1>Weather</h1>
+</header>
+<div class="conteudo">
+  <div class="item painel">
+    <div class="painel-busca">
+      <form #form="ngForm" (ngSubmit)="carregarClima(form)">
+        <input
+          [ngModel]
+          name="busca"
+          type="text"
+          placeholder="Digite a sua cidade"
+        />
+        <button type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+      <div *ngIf="erro" class="error">busca nao encontrada</div>
+    </div>
+    <div class="painel-data">
+      <p>{{ clima?.name }}</p>
+      <p>{{ data }}</p>
+      <p>{{ hora }}</p>
+      <p>{{ clima?.weather[0].description }}</p>
+    </div>
+    <div class="painel-clima">
+      <img src="assets/{{ icone }}.png" [width]="120" alt="" />
+      <div *ngIf="clima">
+        <p>
+          temperatura : <b>{{ clima?.main.temp | number: "1.0-0" }}C°</b>
+        </p>
+        <p>
+          sensação térmica :
+          <b>{{ clima?.main.feels_like | number: "1.0-0" }}C°</b>
+        </p>
+        <p>
+          temperatura mínima :
+          <b>{{ clima?.main.temp_min | number: "1.0-0" }}C°</b>
+        </p>
+        <p>
+          temperatura máxima :
+          <b>{{ clima?.main.temp_max | number: "1.0-0" }}C°</b>
+        </p>
+        <p>
+          umidade : <b>{{ clima?.main.humidity | number: "1.0-0" }}</b>
+        </p>
+      </div>
+    </div>
+  </div>
+  <footer class="item">© Weather, Walisson Souza, 2022</footer>
+</div>

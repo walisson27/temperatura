@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+@font-face {
+  font-family: "Oswald-Light";
+  src: url("fonts/Oswald-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Oswald-SemiBold";
+  src: url("fonts/Oswald-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Oswald-Bold";
+  src: url("fonts/Oswald-Bold.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Oswald-Light", sans-serif;
+  overflow-x: hidden;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: all 5000s ease-in-out 0s;
+  transition-property: background-color, color;
+}
+
+html {
+  /*background: url("assets/photo.jpeg") 100% 100%;*/
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right,#b92b27, #1565C0);
+  min-height: 100vh;
+}
